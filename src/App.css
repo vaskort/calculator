@@ -1,6 +1,7 @@
 body {
-  background-color: #282c34;
-  color: #fff;
+  background-color: #fff;
+  color: #222;
+  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .App {

@@ -1,11 +1,20 @@
 .button {
-  width: 33.333%;
-  display: inline-block;
+  flex: 1;
+  flex-basis: 30%;
   background-color: #fff;
   color: black;
   height: 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 1%;
 }
 
 .calcContainer {
   display: block;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-flow: wrap;
+  align-content: space-between;
 }
