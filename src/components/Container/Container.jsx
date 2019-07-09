@@ -20,14 +20,6 @@ class Container extends Component {
     this.handleEquals = this.handleEquals.bind(this);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log("number", nextState.number);
-    console.log("queue", nextState.queue);
-    console.log("current value", nextState.currentValue);
-    console.log("nextState", nextState);
-    return true;
-  }
-
   handlePressNumber(e) {
     const value = e.target.value;
 
