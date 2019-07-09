@@ -3,4 +3,9 @@
   display: inline-block;
   background-color: #fff;
   color: black;
+  height: 30px;
+}
+
+.calcContainer {
+  display: block;
 }
