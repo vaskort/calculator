@@ -6,6 +6,12 @@ import calculate from '../../utilities/calculator';
 import styles from './Container.module.css';
 
 class Container extends Component {
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(nextState);
+    return true;
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -23,6 +29,9 @@ class Container extends Component {
   handlePressNumber(e) {
     const value = e.target.value;
 
+    if (value === "." && this.state.number.indexOf(".") !== -1) return false;
+    if (value === "0" && this.state.currentNumberOnScreen === "0") return false;
+
     this.state.number.push(value);
     this.setNumberOnScreen(this.state.number.join(''));
   }
@@ -36,6 +45,7 @@ class Container extends Component {
   }
 
   handleEquals() {
+    if (this.state.queue.length < 2) return;
     this.state.queue.push(this.state.number.join(''));
     const result = calculate(this.state.queue);
     this.setState({

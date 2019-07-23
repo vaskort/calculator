@@ -155,5 +155,54 @@ describe('Calculator Component', () => {
     });
   });
 
+  it('does not call set State to update the properties if the = is pressed with one number', () => {
+    const wrapper = shallow(<Container />)
+    const instance = wrapper.instance();
+    const spy = jest.spyOn(wrapper.instance(), 'setState');
 
+    instance.handleEquals();
+
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it('makes sure you cannot choose more than 1 zero', () => {
+    const wrapper = shallow(<Container />)
+    const instance = wrapper.instance();
+    const spy = jest.spyOn(wrapper.instance(), 'setNumberOnScreen');
+    const e = {
+      target: {
+        value: '0'
+      }
+    }
+
+    instance.setState({
+      number: ['0'],
+      currentNumberOnScreen: '0',
+      queue: []
+    });
+
+    instance.handlePressNumber(e);
+
+    expect(spy).not.toHaveBeenCalledWith();
+  });
+
+  it('does not allow you to add another . if you already have one', () => {
+    const wrapper = shallow(<Container />)
+    const instance = wrapper.instance();
+
+    const e = {
+      target: {
+        value: '.'
+      }
+    }
+
+    instance.setState({
+      number: ['0', '.', '0', '1'],
+      queue: []
+    });
+
+    instance.handlePressNumber(e);
+
+    expect(instance.state.number).toEqual(['0', '.', '0', '1']);
+  });
 });

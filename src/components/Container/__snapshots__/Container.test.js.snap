@@ -7,38 +7,37 @@ exports[`Calculator Component renders without crashing 1`] = `
   <div
     className="screen"
   />
-  <div>
-    <div
-      className="calcContainer"
+  <div
+    className="buttonsContainer"
+  >
+    <button
+      className="button"
+      onClick={[Function]}
+      value="+"
     >
-      <button
-        className="button"
-        onClick={[Function]}
-        value="+"
-      >
-        +
-      </button>
-      <button
-        className="button"
-        onClick={[Function]}
-        value="-"
-      >
-        -
-      </button>
-      <button
-        className="button"
-        onClick={[Function]}
-        value="/"
-      >
-        /
-      </button>
-      <button
-        className="button"
-        onClick={[Function]}
-      >
-        =
-      </button>
-    </div>
+      +
+    </button>
+    <button
+      className="button"
+      onClick={[Function]}
+      value="-"
+    >
+      -
+    </button>
+    <button
+      className="button"
+      onClick={[Function]}
+      value="/"
+    >
+      /
+    </button>
+    <button
+      className="button"
+      onClick={[Function]}
+      value="*"
+    >
+      *
+    </button>
     <button
       className="button"
       onClick={[Function]}
@@ -105,8 +104,28 @@ exports[`Calculator Component renders without crashing 1`] = `
     <button
       className="button"
       onClick={[Function]}
+      value={0}
+    >
+      0
+    </button>
+    <button
+      className="button"
+      onClick={[Function]}
+      value="."
+    >
+      .
+    </button>
+    <button
+      className="button"
+      onClick={[Function]}
     >
       Clear
+    </button>
+    <button
+      className="button"
+      onClick={[Function]}
+    >
+      =
     </button>
   </div>
 </div>
